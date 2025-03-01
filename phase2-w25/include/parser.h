@@ -6,31 +6,31 @@
 
 // Basic node types for AST
 typedef enum {
-  AST_PROGRAM,    // Program node
-  AST_VARDECL,    // Variable declaration (int x)
-  AST_ASSIGN,     // Assignment (x = 5)
-  AST_PRINT,      // Print statement
-  AST_NUMBER,     // Number literal
-  AST_IDENTIFIER, // Variable name
-                  // TODO: Add more node types as needed
+    AST_PROGRAM,    // Program node
+    AST_VARDECL,    // Variable declaration (int x)
+    AST_ASSIGN,     // Assignment (x = 5)
+    AST_PRINT,      // Print statement
+    AST_NUMBER,     // Number literal
+    AST_IDENTIFIER, // Variable name
+                    // TODO: Add more node types as needed
 } ASTNodeType;
 
 typedef enum {
-  PARSE_ERROR_NONE,
-  PARSE_ERROR_UNEXPECTED_TOKEN,
-  PARSE_ERROR_MISSING_SEMICOLON,
-  PARSE_ERROR_MISSING_IDENTIFIER,
-  PARSE_ERROR_MISSING_EQUALS,
-  PARSE_ERROR_INVALID_EXPRESSION
+    PARSE_ERROR_NONE,
+    PARSE_ERROR_UNEXPECTED_TOKEN,
+    PARSE_ERROR_MISSING_SEMICOLON,
+    PARSE_ERROR_MISSING_IDENTIFIER,
+    PARSE_ERROR_MISSING_EQUALS,
+    PARSE_ERROR_INVALID_EXPRESSION
 } ParseError;
 
 // AST Node structure
 typedef struct ASTNode {
-  ASTNodeType type;      // Type of node
-  Token token;           // Token associated with this node
-  struct ASTNode *left;  // Left child
-  struct ASTNode *right; // Right child
-                         // TODO: Add more fields if needed
+    ASTNodeType type;      // Type of node
+    Token token;           // Token associated with this node
+    struct ASTNode *left;  // Left child
+    struct ASTNode *right; // Right child
+                           // TODO: Add more fields if needed
 } ASTNode;
 
 // Parser functions
